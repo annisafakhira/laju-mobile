@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:laju_flutter/screens/menu.dart';
+import 'package:laju_flutter/screens/my_product_list.dart';
 import 'package:laju_flutter/screens/products_form.dart';
+import 'package:laju_flutter/screens/product_entry_list.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -61,6 +63,28 @@ class LeftDrawer extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => ProductFormPage(),
                   ));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.view_list),
+            title: const Text('Product List'),
+            onTap: () {
+                // Route to product list page
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ProductEntryListPage()),
+                );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.folder_special),
+            title: const Text('My Product List'),
+            onTap: () {
+                // Route to product list page
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyProductListPage()),
+                );
             },
           ),
         ],
